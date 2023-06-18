@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { Contact, DelButton } from './ContactElement.styled';
 import { deleteContact } from 'redux/operations';
+import { GiRotaryPhone } from 'react-icons/gi';
 
 
 const ContactElement = ({ contact }) => {
@@ -12,14 +13,15 @@ const ContactElement = ({ contact }) => {
 
   const handleDelete = () => dispatch(deleteContact(id));
 
-
   return (
-    <Contact>
-      {name}: {phone}
-      <DelButton type="button" onClick={handleDelete} >
-        Delete
-      </DelButton>
-    </Contact>
+    <>
+      <Contact>
+        <GiRotaryPhone size="15" color='red'/> {name}: {phone}
+        <DelButton type="button" onClick={handleDelete}>
+          Delete
+        </DelButton>
+      </Contact>
+    </>
   );
 };
 
