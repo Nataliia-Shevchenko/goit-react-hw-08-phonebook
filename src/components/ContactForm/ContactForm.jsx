@@ -1,8 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Form, FormInput, FormButton } from './ContactForm.styled';
-import { addContact } from 'redux/operations';
-import { selectContactsList } from 'redux/selectors';
-
+import { addContact } from 'redux/contacts/operations';
+import { selectContactsList } from 'redux/contacts/selectors';
 
 const ContactForm = () => {
   const contacts = useSelector(selectContactsList);
@@ -12,8 +11,8 @@ const ContactForm = () => {
   const handleFormSubmit = e => {
     e.preventDefault();
     const form = e.target;
- 
-    if(contacts.find(contact => contact.name === form.elements.name.value)){
+
+    if (contacts.find(contact => contact.name === form.elements.name.value)) {
       window.alert(`${form.elements.name.value} is already in contacts`);
       return;
     }
@@ -28,6 +27,7 @@ const ContactForm = () => {
 
   return (
     <>
+      <h1>Phonebook</h1>
       <Form onSubmit={handleFormSubmit}>
         <label>
           Name
