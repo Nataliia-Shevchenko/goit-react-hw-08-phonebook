@@ -8,16 +8,18 @@
 
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from './Layout';
+import { Toaster } from 'react-hot-toast';
 
 // import RegisterPage from 'pages/RegisterPage';
 // import LoginPage from 'pages/LoginPage';
 import { lazy } from 'react';
+import PrivateRoute from './PrivateRoute';
 // import ContactsPage from 'pages/ContactsPage';
 
-const HomePage = lazy(() => import('../pages/HomePage'))
-const RegisterPage = lazy(() => import('../pages/RegisterPage'))
-const LoginPage = lazy(() => import('../pages/LoginPage'))
-const ContactsPage = lazy(() => import('../pages/ContactsPage'))
+const HomePage = lazy(() => import('../pages/HomePage'));
+const RegisterPage = lazy(() => import('../pages/RegisterPage'));
+const LoginPage = lazy(() => import('../pages/LoginPage'));
+const ContactsPage = lazy(() => import('../pages/ContactsPage'));
 
 const App = () => {
   // const dispatch = useDispatch();
@@ -28,20 +30,24 @@ const App = () => {
   //   dispatch(fetchContacts());
   // }, [dispatch]);
 
- 
-
   return (
     <>
-      
-
       <Routes>
-        <Route path="/" element={<Layout/>} >
-          <Route index element={<HomePage/>} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/contacts" element={< ContactsPage/>} />
+          <Route
+            path="/contacts"
+            element={
+              <PrivateRoute>
+                <ContactsPage />
+              </PrivateRoute>
+            }
+          />
         </Route>
       </Routes>
+      <Toaster position="top-right" reverseOrder={false} />
     </>
   );
 };

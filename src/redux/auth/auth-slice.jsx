@@ -1,4 +1,4 @@
-import { register, login } from './auth-operations';
+import { register, login, logOut } from './auth-operations';
 
 import { createSlice } from '@reduxjs/toolkit';
 
@@ -22,9 +22,17 @@ const handleFulfilled = (state, { payload }) => {
   state.isLoading = false;
 };
 
+const handleLogOutFulfilled = (state) => {
+  state.user = { name: null, email: null, password: null };
+  state.token = null;
+  state.isLoggedIn = false;
+  state.isLoading = false;
+  state.error = '';
+};
+
 const handleRagected = (state, { payload }) => {
   state.isLoggedIn = false;
-  state.error = payload ;
+  state.error = payload;
 };
 
 const authSlice = createSlice({
@@ -33,7 +41,8 @@ const authSlice = createSlice({
   extraReducers: builder => {
     builder
       .addCase(register.fulfilled, handleFulfilled)
-      .addMatcher(({ type }) => type.endsWith('/pendang'), handlePending)
+      .addCase(login.fulfilled, handleFulfilled).addCase(logOut.fulfilled, handleLogOutFulfilled)
+      .addMatcher(({ type }) => type.endsWith('/pending'), handlePending)
       .addMatcher(({ type }) => type.endsWith('/rejected'), handleRagected);
   },
   // [register.fulfilled](state, action) {
