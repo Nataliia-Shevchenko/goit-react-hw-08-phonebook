@@ -7,7 +7,7 @@ import { GiRotaryPhone } from 'react-icons/gi';
 
 
 const ContactElement = ({ contact }) => {
-  const { id, name, phone } = contact;
+  const { id, name, number } = contact;
 
   const dispatch = useDispatch();
 
@@ -16,7 +16,7 @@ const ContactElement = ({ contact }) => {
   return (
     <>
       <Contact>
-        <GiRotaryPhone size="15" color='red'/> {name}: {phone}
+        <GiRotaryPhone size="15" color='red'/> {name}: {number}
         <DelButton type="button" onClick={handleDelete}>
           Delete
         </DelButton>
@@ -31,6 +31,6 @@ ContactElement.propTypes = {
   contact: PropTypes.shape({
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    phone: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
   }).isRequired,
 };
