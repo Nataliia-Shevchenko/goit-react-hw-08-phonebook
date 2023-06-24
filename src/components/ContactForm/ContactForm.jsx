@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Form, FormInput, FormButton } from './ContactForm.styled';
 import { addContact } from 'redux/contacts/operations';
 import { selectContactsList } from 'redux/contacts/selectors';
+import { toast } from 'react-hot-toast';
 
 const ContactForm = () => {
   const contacts = useSelector(selectContactsList);
@@ -13,7 +14,7 @@ const ContactForm = () => {
     const form = e.target;
 
     if (contacts.find(contact => contact.name === form.elements.name.value)) {
-      window.alert(`${form.elements.name.value} is already in contacts`);
+      toast.error(`${form.elements.name.value} is already in contacts`);
       return;
     }
     dispatch(
