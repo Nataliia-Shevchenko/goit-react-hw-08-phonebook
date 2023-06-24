@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[983],{3983:function(e,t,r){r.r(t);var n=r(6747),o=r(184);t.default=function(){return(0,o.jsx)(n.Z,{sx:{display:"flex",justifyContent:"center",alignItems:"center",textTransform:"uppercase",textAlign:"center",letterSpacing:4,mx:"auto",mt:5,px:10,borderRadius:5,width:200,height:100,backgroundColor:"blue",color:"white"},children:(0,o.jsx)("p",{children:"Welcome! Create your own phonebook!"})})}}}]);
+//# sourceMappingURL=983.18ecd3d7.chunk.js.map
