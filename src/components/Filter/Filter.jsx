@@ -15,7 +15,7 @@ const Filter = () => {
 
   return (
     <>
-      <h2>Contacts</h2>
+      <h2>My contacts</h2>
       <label>
         Find contact by name
         <FilterInput type="text" value={filter} onChange={handleFilterChange} />
