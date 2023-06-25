@@ -1,5 +1,4 @@
 import { register, login, logOut, refreshUser } from './auth-operations';
-
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
@@ -7,7 +6,6 @@ const initialState = {
   token: null,
   isLoggedIn: false,
   isLoading: false,
-  isRefreshing: false,
   error: '',
 };
 
@@ -31,10 +29,11 @@ const handleLogOutFulfilled = state => {
   state.error = '';
 };
 
-const handleRefreshFulfilled = (state, {payload} ) => {
+const handleRefreshFulfilled = (state, { payload }) => {
   state.user = payload;
   state.isLoggedIn = true;
-  state.isRefreshing = false;
+  state.isLoading = false;
+  state.error = '';
 };
 
 const handleRegected = (state, { payload }) => {
@@ -55,17 +54,6 @@ const authSlice = createSlice({
       .addMatcher(({ type }) => type.endsWith('/pending'), handlePending)
       .addMatcher(({ type }) => type.endsWith('/rejected'), handleRegected);
   },
-  // [register.fulfilled](state, action) {
-  //   state.user = action.payload.user;
-  //   state.token = action.payload.token;
-  //   state.isLoggedIn = true;
-  // },
-  // [login.fulfilled](state, action) {
-  //     state.user = action.payload.user;
-  //     state.token = action.payload.token;
-  //     state.isLoggedIn = true;
-  //   },
-  // },
 });
 
 export const authReducer = authSlice.reducer;

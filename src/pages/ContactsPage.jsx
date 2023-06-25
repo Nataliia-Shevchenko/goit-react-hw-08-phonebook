@@ -5,6 +5,7 @@ import { fetchContacts } from 'redux/contacts/operations';
 import ContactForm from 'components/ContactForm/ContactForm';
 import ContactList from 'components/ContactList/ContactList';
 import Filter from 'components/Filter/Filter';
+import Box from '@mui/material/Box';
 
 const ContactsPage = () => {
   const dispatch = useDispatch();
@@ -16,16 +17,29 @@ const ContactsPage = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <>
+    <h2>My contacts</h2>
+    <Box
+      sx={{
+        padding: '20px',
+        display: 'flex',
+        flexWrap: 'wrap',
+        alignItems: 'start',
+        gap:'20px',
+      }}
+    >
       <ContactForm />
-      <Filter />
-      {isLoading && !error && (
-        <p>
-          <b>Request in progress...</b>
-        </p>
-      )}
-      <ContactList />
-    </div>
+      <div>
+        <Filter />
+        {isLoading && !error && (
+          <p>
+            <b>Request in progress...</b>
+          </p>
+        )}
+        <ContactList />
+      </div>
+    </Box>
+    </>
   );
 };
 export default ContactsPage;

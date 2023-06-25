@@ -13,7 +13,7 @@ export const AppBarComp = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar>
+        <Toolbar sx={{ display: 'flex', justifyContent: 'space-between',  }}>
           <Navigation />
           {isLoggedIn ? <UserMenu /> : <AuthNav />}
         </Toolbar>

@@ -1,8 +1,11 @@
 import React from 'react';
-import { FilterInput } from './Filter.styled';
+// import { FilterInput } from './Filter.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from 'redux/contacts/filterSlice';
 import { selectFilter } from 'redux/contacts/selectors';
+import TextField from '@mui/material/TextField';
+import InputAdornment from '@mui/material/InputAdornment';
+import SearchIcon from '@mui/icons-material/Search';
 
 const Filter = () => {
   const { filter } = useSelector(selectFilter);
@@ -15,11 +18,21 @@ const Filter = () => {
 
   return (
     <>
-      <h2>My contacts</h2>
-      <label>
-        Find contact by name
-        <FilterInput type="text" value={filter} onChange={handleFilterChange} />
-      </label>
+      <TextField
+        value={filter}
+        onChange={handleFilterChange}
+        variant="outlined"
+        label="Search contact"
+        type='text'
+        placeholder='Find contact by name'
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <SearchIcon />
+            </InputAdornment>
+          ),
+        }}
+      />
     </>
   );
 };

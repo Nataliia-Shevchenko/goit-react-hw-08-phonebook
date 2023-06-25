@@ -27,17 +27,16 @@ const RegisterForm = () => {
     <Form onSubmit={handleSubmit}>
       <TextField
         required
-        id="outlined-basic"
+        // id="outlined-basic"
         label="Name"
         type="text"
         variant="outlined"
         name="name"
         size="small"
-        helperText="Please enter your name"
       />
       <TextField
         required
-        id="outlined-basic"
+        // id="outlined-basic"
         label="Email"
         type="email"
         variant="outlined"
@@ -46,7 +45,7 @@ const RegisterForm = () => {
       />
       <TextField
         required
-        id="outlined-basic"
+        // id="outlined-basic"
         label="Password"
         type="password"
         variant="outlined"

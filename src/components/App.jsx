@@ -1,11 +1,3 @@
-// import React, { useEffect } from 'react';
-// import ContactForm from 'components/ContactForm';
-// import Filter from 'components/Filter';
-// import ContactList from 'components/ContactList';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { selectError, selectIsLoading } from 'redux/selectors';
-// import { fetchContacts } from 'redux/operations';
-
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from './Layout';
 import { Toaster } from 'react-hot-toast';
@@ -19,7 +11,6 @@ const LoginPage = lazy(() => import('../pages/LoginPage'));
 const ContactsPage = lazy(() => import('../pages/ContactsPage'));
 
 const App = () => {
-
   return (
     <>
       <Routes>
