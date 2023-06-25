@@ -15,9 +15,9 @@ const HomePage = () => {
         px: 10,
         borderRadius: 5,
         width: 200,
-        height: 100,
-        backgroundColor: 'blue',
-        color: 'white',
+        // height: 100,
+        backgroundColor: '#c2e6f3',
+        boxShadow: '3px 3px 2px 1px rgba(0, 0, 0, 0.2)',
       }}
     >
       <p>Welcome! Create your own phonebook!</p>
