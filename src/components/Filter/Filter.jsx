@@ -32,6 +32,9 @@ const Filter = () => {
             </InputAdornment>
           ),
         }}
+        sx={{
+          marginBottom: '20px',
+        }}
       />
     </>
   );

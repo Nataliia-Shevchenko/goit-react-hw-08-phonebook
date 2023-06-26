@@ -30,54 +30,31 @@ const ContactForm = () => {
 
   return (
     <>
-      {/* <h1>Phonebook</h1> */}
       <Form onSubmit={handleFormSubmit}>
-        {/* <label>
-          Name
-          <FormInput
-            type="text"
-            name="name"
-            pattern="^[a-zA-Za-яА-Я]+(([' -][a-zA-Za-яА-Я ])?[a-zA-Za-яА-Я]*)*$"
-            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-            required
-          />
-        </label> */}
-        {/* <label>
-          Number
-          <FormInput
-            type="tel"
-            name="number"
-            pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-            required
-          />
-        </label> */}
         <TextField
-        required
-        label="Name"
-        type="text"
-        variant="outlined"
-        name="name"
-        size="small"
-        pattern="^[a-zA-Za-яА-Я]+(([' -][a-zA-Za-яА-Я ])?[a-zA-Za-яА-Я]*)*$"
-        title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+          required
+          label="Name"
+          type="text"
+          variant="outlined"
+          name="name"
+          size="small"
+          pattern="^[a-zA-Za-яА-Я]+(([' -][a-zA-Za-яА-Я ])?[a-zA-Za-яА-Я]*)*$"
+          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+        />
+        <TextField
+          required
+          label="Number"
+          type="tel"
+          variant="outlined"
+          name="number"
+          size="small"
+          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+        />
 
-      />
-      <TextField
-        required
-        label="Number"
-        type="tel"
-        variant="outlined"
-        name="number"
-        size="small"
-        pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-        title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-
-      />
-        {/* <FormButton type="submit">Add contact</FormButton> */}
         <Button type="submit" variant="contained">
-        Add contact
-      </Button>
+          Add contact
+        </Button>
       </Form>
     </>
   );

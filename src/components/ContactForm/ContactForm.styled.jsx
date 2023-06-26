@@ -6,7 +6,7 @@ export const Form = styled.form`
   justify-content: center;
   align-items: flex-start;
   gap: 20px;
-  width: 400px;
+  min-width: 300px;
   padding: 20px;
   border: 2px solid #02639b;
   border-radius: 5px;

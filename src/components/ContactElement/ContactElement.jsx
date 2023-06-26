@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-// import { Contact, DelButton } from './ContactElement.styled';
 import { deleteContact } from 'redux/contacts/operations';
-// import { GiRotaryPhone } from 'react-icons/gi';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -22,21 +20,12 @@ const ContactElement = ({ contact }) => {
 
   return (
     <>
-      {/* <Contact>
-        <GiRotaryPhone size="15" color='red'/> {name}: {number}
-        <DelButton type="button" onClick={handleDelete}>
-          Delete
-        </DelButton>
-      </Contact> */}
-
       <Card sx={{ minWidth: 200 }}>
-        <CardContent>
+        <CardContent sx={{ backgroundColor: '#faf8a2' }}>
           <AccountCircleOutlinedIcon sx={{ color: 'blue' }} />
-          <Typography variant="h6" >{name}</Typography>
+          <Typography variant="h6">{name}</Typography>
           <PhoneIcon sx={{ color: 'blue' }} />
-          <Typography variant="h5">
-            {number}
-          </Typography>
+          <Typography variant="h5">{number}</Typography>
         </CardContent>
         <CardActions>
           <Button
