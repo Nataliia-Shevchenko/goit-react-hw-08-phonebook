@@ -10,6 +10,8 @@ import Typography from '@mui/material/Typography';
 import DeleteIcon from '@mui/icons-material/Delete';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import PhoneIcon from '@mui/icons-material/Phone';
+// import EditIcon from '@mui/icons-material/Edit';
+import ModalUpdateContact from 'components/ModalUpdateContact/ModalUpdateContact';
 
 const ContactElement = ({ contact }) => {
   const { id, name, number } = contact;
@@ -22,10 +24,13 @@ const ContactElement = ({ contact }) => {
     <>
       <Card sx={{ minWidth: 150 }}>
         <CardContent sx={{ backgroundColor: '#faf8a2' }}>
-          <AccountCircleOutlinedIcon sx={{ color: 'blue' }} />
-          <Typography variant="h6">{name}</Typography>
-          <PhoneIcon sx={{ color: 'blue' }} />
-          <Typography variant="h5">{number}</Typography>
+          <Typography variant="h6">
+            <AccountCircleOutlinedIcon sx={{ color: 'blue' }} /> {name}
+          </Typography>
+
+          <Typography variant="h5">
+            <PhoneIcon sx={{ color: 'blue' }} /> {number}
+          </Typography>
         </CardContent>
         <CardActions>
           <Button
@@ -35,6 +40,7 @@ const ContactElement = ({ contact }) => {
           >
             Delete
           </Button>
+          <ModalUpdateContact contact={contact}/>
         </CardActions>
       </Card>
     </>

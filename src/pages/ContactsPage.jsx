@@ -25,7 +25,7 @@ const ContactsPage = () => {
       <Box
         sx={{
           padding: '20px',
-          display: 'flex',
+          // display: 'flex',
           // flexWrap: 'wrap',
           alignItems: 'start',
           gap: '20px',
