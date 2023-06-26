@@ -20,7 +20,7 @@ const ContactElement = ({ contact }) => {
 
   return (
     <>
-      <Card sx={{ minWidth: 200 }}>
+      <Card sx={{ minWidth: 150 }}>
         <CardContent sx={{ backgroundColor: '#faf8a2' }}>
           <AccountCircleOutlinedIcon sx={{ color: 'blue' }} />
           <Typography variant="h6">{name}</Typography>

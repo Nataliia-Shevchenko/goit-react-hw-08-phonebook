@@ -25,6 +25,7 @@ const Filter = () => {
         label="Search contact"
         type='text'
         placeholder='Find contact by name'
+        fullWidth
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">
@@ -34,6 +35,7 @@ const Filter = () => {
         }}
         sx={{
           marginBottom: '20px',
+          
         }}
       />
     </>
