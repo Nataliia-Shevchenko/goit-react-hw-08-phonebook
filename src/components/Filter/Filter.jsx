@@ -1,5 +1,4 @@
 import React from 'react';
-// import { FilterInput } from './Filter.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from 'redux/contacts/filterSlice';
 import { selectFilter } from 'redux/contacts/selectors';
@@ -23,8 +22,8 @@ const Filter = () => {
         onChange={handleFilterChange}
         variant="outlined"
         label="Search contact"
-        type='text'
-        placeholder='Find contact by name'
+        type="text"
+        placeholder="Find contact by name"
         fullWidth
         InputProps={{
           startAdornment: (
@@ -35,7 +34,6 @@ const Filter = () => {
         }}
         sx={{
           marginBottom: '20px',
-          
         }}
       />
     </>

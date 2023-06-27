@@ -19,14 +19,12 @@ const ContactsPage = () => {
 
   return (
     <>
-      <Typography variant="h5" textTransform="uppercase" margin='15px'>
+      <Typography variant="h5" textTransform="uppercase" margin="15px">
         My contacts
       </Typography>
       <Box
         sx={{
           padding: '20px',
-          // display: 'flex',
-          // flexWrap: 'wrap',
           alignItems: 'start',
           gap: '20px',
         }}

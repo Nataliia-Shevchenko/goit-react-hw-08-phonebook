@@ -29,7 +29,6 @@ export const UserMenu = () => {
       >
         Log Out
       </Button>
-
     </div>
   );
 };

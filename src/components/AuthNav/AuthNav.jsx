@@ -10,14 +10,12 @@ export const AuthNav = () => {
         <Button
           startIcon={<AppRegistrationRoundedIcon />}
           sx={{ color: 'white' }}
-        >Sign Up
+        >
+          Sign Up
         </Button>
       </NavLink>
       <NavLink to="/login">
-        <Button
-          startIcon={<LoginRoundedIcon />}
-          sx={{ color: 'white' }}
-        >
+        <Button startIcon={<LoginRoundedIcon />} sx={{ color: 'white' }}>
           Log In
         </Button>
       </NavLink>

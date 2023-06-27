@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const Form = styled.form`
   display: flex;
@@ -7,6 +7,4 @@ export const Form = styled.form`
   align-items: center;
   gap: 20px;
   padding: 30px;
-
-
 `;

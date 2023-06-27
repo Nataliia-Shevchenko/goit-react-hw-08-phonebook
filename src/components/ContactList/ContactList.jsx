@@ -2,15 +2,11 @@ import React from 'react';
 import ContactElement from 'components/ContactElement';
 import { useSelector } from 'react-redux';
 import { selectVisibleContacts } from 'redux/contacts/selectors';
-// import { List } from './ContactList.styled';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 
 const ContactList = () => {
   const visibleContacts = useSelector(selectVisibleContacts);
-
-  // const sortedContacts = visibleContacts.sort((firstItem, secondItem) => firstItem.name - secondItem.name);
-  // console.log(sortedContacts) key={contact.id}
 
   return (
     <Box sx={{ flexGrow: 1 }}>

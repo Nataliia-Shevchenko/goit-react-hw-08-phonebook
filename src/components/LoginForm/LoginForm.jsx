@@ -1,4 +1,3 @@
-
 import { toast } from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -9,7 +8,6 @@ import Button from '@mui/material/Button';
 import NavigateNextRoundedIcon from '@mui/icons-material/NavigateNextRounded';
 
 const LoginForm = () => {
-
   const dispatch = useDispatch();
 
   const handleSubmit = e => {

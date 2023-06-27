@@ -4,7 +4,7 @@ import { selectIsLoggedIn } from 'redux/auth/auth-selectors';
 
 const PublicRoute = ({ children }) => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
-  // const isAuth = useSelector(state => state.auth.token);
+
   const location = useLocation();
   return !isLoggedIn ? children : <Navigate to={location.state ?? '/'} />;
 };

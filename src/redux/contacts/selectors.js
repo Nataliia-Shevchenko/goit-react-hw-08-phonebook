@@ -10,10 +10,10 @@ export const selectFilter = state => state.filter;
 
 export const selectVisibleContacts = createSelector(
   [selectContactsList, selectFilter],
-  (contacts, {filter}) => {
-    return contacts.filter(contact =>
+  (contacts, { filter }) => {
+
+    return contacts.toSorted((a, b) => a.name.localeCompare(b.name)).filter(contact =>
       contact.name.toLowerCase().includes(filter.toLowerCase())
     );
   }
 );
-

@@ -10,7 +10,6 @@ import Typography from '@mui/material/Typography';
 import DeleteIcon from '@mui/icons-material/Delete';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import PhoneIcon from '@mui/icons-material/Phone';
-// import EditIcon from '@mui/icons-material/Edit';
 import ModalUpdateContact from 'components/ModalUpdateContact/ModalUpdateContact';
 
 const ContactElement = ({ contact }) => {
@@ -27,7 +26,6 @@ const ContactElement = ({ contact }) => {
           <Typography variant="h6">
             <AccountCircleOutlinedIcon sx={{ color: 'blue' }} /> {name}
           </Typography>
-
           <Typography variant="h5">
             <PhoneIcon sx={{ color: 'blue' }} /> {number}
           </Typography>
@@ -40,7 +38,7 @@ const ContactElement = ({ contact }) => {
           >
             Delete
           </Button>
-          <ModalUpdateContact contact={contact}/>
+          <ModalUpdateContact contact={contact} />
         </CardActions>
       </Card>
     </>

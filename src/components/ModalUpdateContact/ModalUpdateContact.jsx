@@ -1,11 +1,11 @@
 import { useState } from 'react';
+import { updateContact } from 'redux/contacts/operations';
+import { useDispatch } from 'react-redux';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import EditIcon from '@mui/icons-material/Edit';
 import TextField from '@mui/material/TextField';
-import { updateContact } from 'redux/contacts/operations';
-import { useDispatch } from 'react-redux';
 import { Form } from './ModalUpdateContact.styled';
 
 const style = {
@@ -13,16 +13,12 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  display: 'flex',
-  //   flexDirection: 'column',
-  //   justifyContect: 'center',
-  //   alignItems: 'center',
-  gap: 20,
   width: 250,
   bgcolor: 'background.paper',
   border: '2px solid #000',
+  borderRadius: '10px',
   boxShadow: 24,
-  p: 4,
+  p: 2,
 };
 
 const ModalUpdateContact = ({ contact }) => {
@@ -36,12 +32,12 @@ const ModalUpdateContact = ({ contact }) => {
     number,
   });
 
+  const dispatch = useDispatch();
+
   const handleChange = e => {
-    // setContact((prevState) => {(...prevState), [e.target.name]: e.target.value,});
     const { name, value } = e.target;
     setContactItem({ [name]: value });
   };
-  const dispatch = useDispatch();
 
   const handleFormSubmit = e => {
     e.preventDefault();
