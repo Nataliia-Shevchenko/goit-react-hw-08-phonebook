@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { register } from 'redux/auth/auth-operations';
+import { toast } from 'react-hot-toast';
 import { Form } from './RegisterForm.styled';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
@@ -19,7 +20,12 @@ const RegisterForm = () => {
         email: form.elements.email.value,
         password: form.elements.password.value,
       })
-    );
+    )
+      .unwrap()
+      .then(() => {
+        toast.success('User successfully created!');
+      })
+      .catch(() => toast.error('Error Sign Up'));
     form.reset();
   };
 
@@ -27,7 +33,6 @@ const RegisterForm = () => {
     <Form onSubmit={handleSubmit}>
       <TextField
         required
-        // id="outlined-basic"
         label="Name"
         type="text"
         variant="outlined"
@@ -36,7 +41,6 @@ const RegisterForm = () => {
       />
       <TextField
         required
-        // id="outlined-basic"
         label="Email"
         type="email"
         variant="outlined"
@@ -45,12 +49,12 @@ const RegisterForm = () => {
       />
       <TextField
         required
-        // id="outlined-basic"
         label="Password"
         type="password"
         variant="outlined"
         name="password"
         size="small"
+        helperText="Please enter min 7 symbols"
       />
       <Button type="submit" variant="contained">
         Sign Up
