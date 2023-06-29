@@ -51,8 +51,9 @@ const ModalUpdateContact = ({ contact }) => {
         number: form.elements.number.value,
       })
     );
-    dispatch(fetchContacts());
+    
     handleClose();
+    dispatch(fetchContacts());
   };
 
   return (
