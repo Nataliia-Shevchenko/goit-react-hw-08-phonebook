@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { updateContact } from 'redux/contacts/operations';
+import { fetchContacts, updateContact } from 'redux/contacts/operations';
 import { useDispatch } from 'react-redux';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -22,17 +22,19 @@ const style = {
 };
 
 const ModalUpdateContact = ({ contact }) => {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
   const { id, name, number } = contact;
   const [contactItem, setContactItem] = useState({
     name,
     number,
   });
+  const [open, setOpen] = useState(false);
 
   const dispatch = useDispatch();
+  
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -49,6 +51,7 @@ const ModalUpdateContact = ({ contact }) => {
         number: form.elements.number.value,
       })
     );
+    dispatch(fetchContacts());
     handleClose();
   };
 
