@@ -7,6 +7,9 @@ import Modal from '@mui/material/Modal';
 import EditIcon from '@mui/icons-material/Edit';
 import TextField from '@mui/material/TextField';
 import { Form } from './ModalUpdateContact.styled';
+import InputAdornment from '@mui/material/InputAdornment';
+import AccountCircle from '@mui/icons-material/AccountCircle';
+import PhoneIcon from '@mui/icons-material/Phone';
 
 const style = {
   position: 'absolute',
@@ -30,7 +33,7 @@ const ModalUpdateContact = ({ contact }) => {
   const [open, setOpen] = useState(false);
 
   const dispatch = useDispatch();
-  
+
   const handleOpen = () => setOpen(true);
   const handleClose = () => {
     setOpen(false);
@@ -51,7 +54,7 @@ const ModalUpdateContact = ({ contact }) => {
         number: form.elements.number.value,
       })
     );
-    
+
     handleClose();
     dispatch(fetchContacts());
   };
@@ -80,6 +83,13 @@ const ModalUpdateContact = ({ contact }) => {
               variant="standard"
               pattern="^[a-zA-Za-яА-Я]+(([' -][a-zA-Za-яА-Я ])?[a-zA-Za-яА-Я]*)*$"
               title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <AccountCircle />
+                  </InputAdornment>
+                ),
+              }}
             />
             <TextField
               required
@@ -92,6 +102,13 @@ const ModalUpdateContact = ({ contact }) => {
               variant="standard"
               pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
               title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <PhoneIcon />
+                  </InputAdornment>
+                ),
+              }}
             />
             <Button type="submit">Save</Button>
             <Button onClick={handleClose}>Close</Button>
